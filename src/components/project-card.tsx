@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/types";
 import { TechIcon } from "@/components/tech-icon";
 
@@ -54,7 +55,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </ul>
 
-        <div className="mt-auto flex items-center gap-md pt-sm">
+        <div className="mt-auto flex items-center gap-sm pt-sm">
           {project.demoUrl && (
             <a
               href={project.demoUrl}
@@ -71,12 +72,20 @@ export function ProjectCard({ project }: { project: Project }) {
             href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Details for ${project.name} on GitHub`}
-            className="inline-flex items-center gap-2xs text-sm font-medium text-muted transition-colors after:absolute after:inset-0 hover:text-foreground focus-visible:outline-none group-hover:text-foreground"
+            aria-label={`Source for ${project.name} on GitHub`}
+            className="relative z-10 inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted transition-colors hover:bg-surface-muted hover:text-foreground"
+          >
+            <TechIcon icon="github" name="GitHub" size={16} />
+          </a>
+
+          <Link
+            href={`/projects/${project.slug}`}
+            aria-label={`Details for ${project.name}`}
+            className="ml-auto inline-flex items-center gap-2xs text-sm font-medium text-muted transition-colors after:absolute after:inset-0 hover:text-foreground focus-visible:outline-none group-hover:text-foreground"
           >
             Details
-            <ExternalArrow />
-          </a>
+            <span aria-hidden>&rarr;</span>
+          </Link>
         </div>
       </div>
     </article>
