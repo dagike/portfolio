@@ -22,6 +22,8 @@ export type Project = {
   repoUrl: string;
   /** Public path to the cover screenshot, e.g. "/projects/<slug>/cover.png". */
   screenshot: string;
+  /** Bulleted feature list, one entry per bullet. */
+  features: readonly string[];
   /** Longer body copy, one entry per paragraph. */
   details: readonly string[];
   /** Emphasis / ordering hook for the UI. */

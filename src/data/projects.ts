@@ -20,6 +20,14 @@ export const projects = [
     demoUrl: "https://green-star-store.vercel.app",
     repoUrl: "https://github.com/dagike/green-star-store",
     screenshot: "/projects/green-star-store/cover.png",
+    features: [
+      "Home page with a hero, category tiles and a top-rated rail; product cards show sale pricing plus low-stock and out-of-stock badges.",
+      "Shop page pairing a filter sidebar (category, price range, minimum rating, in-stock only) with a sort control and an infinite-scroll grid.",
+      "Product pages with an image gallery, stock status, a quantity control, and a reviews section with a rating breakdown.",
+      "Cart with quantity edits, line removal, promo codes and a live order summary; wishlist items move to the cart individually.",
+      "Three-step checkout — shipping, mocked payment, review — with a step indicator and per-step validation.",
+      "Order confirmation with an order number and estimated delivery, plus an Orders page listing past orders by email.",
+    ],
     details: [
       "A portfolio ecommerce build that runs on real data rather than fixtures: the product catalog, reviews and orders are seeded into a Neon Postgres database and served through a small set of serverless API routes.",
       "The storefront leads with a hero, category tiles and a top-rated rail. Product cards surface sale pricing and low-stock and out-of-stock badges. The shop page pairs a sidebar of filters (category, price range, minimum rating, in-stock only) with a sort control and an infinite-scroll grid.",
@@ -46,6 +54,14 @@ export const projects = [
     demoUrl: "https://cybersecurity-fixed.vercel.app",
     repoUrl: "https://github.com/dagike/cybersecurity",
     screenshot: "/projects/cybersecurity/cover.png",
+    features: [
+      "One cookie-session login and notes CRUD app built twice: an intentionally vulnerable variant and a hardened one with the same features.",
+      "Six vulnerability classes mapped to the OWASP Top 10 — SQL injection, broken authentication, IDOR, stored XSS, missing CSRF protection and verbose errors.",
+      "Per-flaw write-ups taking each issue from exploit to fix to underlying principle, backed by runnable exploit requests.",
+      "In-app attack console that fires real requests at the vulnerable API.",
+      "Vulnerable app runs only behind a shared-password gate, holds fake seeded data, carries an insecure-demo banner and re-seeds on a schedule.",
+      "Both deployments rate-limited at the edge; databases and secrets fully isolated between the two apps.",
+    ],
     details: [
       "One small app — cookie-session login plus notes CRUD — built twice. apps/vulnerable carries realistic, intentional web vulnerabilities; apps/fixed has the same features hardened with standard practices. The write-ups take each flaw from exploit through fix to the underlying principle, backed by runnable exploit requests.",
       "The vulnerable app is a deliberately insecure teaching demo. It holds only fake, seeded data; the unsafe behaviour is off by default and runs only behind a shared-password gate; its database and secrets are fully isolated from everything else; every page carries an insecure-demo banner; both deployments are rate-limited at the edge; and the vulnerable database is re-seeded on a schedule.",
@@ -72,6 +88,13 @@ export const projects = [
     demoUrl: "https://traveling-world-map.vercel.app",
     repoUrl: "https://github.com/dagike/traveling-world-map",
     screenshot: "/projects/traveling-world-map/cover.png",
+    features: [
+      "Visited countries highlighted on a Leaflet world map, with city and theme-park markers.",
+      "Hover a country for its city list, a city for photos, a park for its favourite coaster and flat ride.",
+      "Click any element for a detail panel drilling country → city → theme park → rides.",
+      "Admin mode (password) adds inline forms to create, edit and delete countries, cities, parks and rides, with a pick-on-map location picker.",
+      "Stats panel with totals and lists of countries, parks and favourite coasters.",
+    ],
     details: [
       "Visited countries are highlighted on a react-leaflet world map, with city and theme-park markers and a top toolbar. Selecting a park opens a detail panel with photos, the favourite coaster and flat ride, and the full ride list; a stats panel totals countries, cities, theme parks and coasters.",
       "Admin mode adds a country with a been-here or want-to-go status and an optional year, and the login password can be changed from within the app.",
@@ -97,6 +120,13 @@ export const projects = [
     demoUrl: "https://game-library-liart.vercel.app",
     repoUrl: "https://github.com/dagike/game-library",
     screenshot: "/projects/game-library/cover.png",
+    features: [
+      "Public library of quick-view game cards — cover, title, star rating — with real-time search, filters and sorting.",
+      "Per-game detail page with full metadata, a personal rating and ranking, private notes, and an open public comment thread.",
+      "Games imported from the RAWG API through an admin search-and-import flow rather than typed in by hand.",
+      "Box art pulled from SteamGridDB, falling back to RAWG's image when there is no match.",
+      "A single seeded owner account gates every add, edit and delete; browsing and commenting stay open to everyone.",
+    ],
     details: [
       "The public library page is a grid of quick-view cards — cover, title, star rating — with real-time search, filters and sorting. Each game has a detail page with full metadata, a personal rating and ranking, private notes, and a public comment thread anyone can post to.",
       "Games are imported from the RAWG API rather than typed in by hand: the admin flow searches RAWG and pulls the selected title into the local database. Browsing and commenting are open to everyone; adding, editing and deleting are restricted to a single seeded owner account.",
