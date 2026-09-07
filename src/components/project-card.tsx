@@ -23,7 +23,14 @@ function ExternalArrow() {
   );
 }
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  priority = false,
+}: {
+  project: Project;
+  /** Set on the first card above the fold so its image is not lazy-loaded. */
+  priority?: boolean;
+}) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:border-muted focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
       <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-surface-muted">
@@ -31,6 +38,7 @@ export function ProjectCard({ project }: { project: Project }) {
           src={project.screenshot}
           alt={`Screenshot of ${project.name}`}
           fill
+          priority={priority}
           className="object-cover transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         />

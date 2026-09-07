@@ -100,9 +100,9 @@ export default function Home() {
         </div>
 
         <ul className="mt-lg grid grid-cols-1 gap-lg sm:grid-cols-2">
-          {featured.map((project) => (
+          {featured.map((project, index) => (
             <li key={project.slug} className="h-full">
-              <ProjectCard project={project} />
+              <ProjectCard project={project} priority={index === 0} />
             </li>
           ))}
         </ul>
