@@ -66,10 +66,10 @@
   --surface-muted: #f4f5f6;
   --border: #e4e4e7;
   --muted: #5b5f66;
-  --accent: var(--green-600);
-  --accent-hover: var(--green-700);
+  --accent: var(--green-700);
+  --accent-hover: var(--green-800);
   --accent-foreground: #ffffff;
-  --ring: var(--green-600);
+  --ring: var(--green-700);
   --danger: #b91c1c;
 }
 
