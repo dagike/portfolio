@@ -28,6 +28,7 @@ export default function ProjectsPage() {
         Full-stack projects, each with a live demo and source on GitHub.
       </p>
 
+      <h2 className="sr-only">All projects</h2>
       <ul className="mt-2xl grid grid-cols-1 gap-lg sm:grid-cols-2 lg:grid-cols-3">
         {ordered.map((project) => (
           <li key={project.slug} className="h-full">
