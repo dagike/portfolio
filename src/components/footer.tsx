@@ -1,9 +1,8 @@
 import { Container } from "@/components/container";
 
 const links = [
-  { href: "#", label: "GitHub" },
-  { href: "#", label: "LinkedIn" },
-  { href: "#", label: "Email" },
+  { href: "https://github.com/dagike", label: "GitHub" },
+  { href: "https://www.linkedin.com/in/isaacdelarosa", label: "LinkedIn" },
 ];
 
 export function Footer() {
@@ -18,6 +17,8 @@ export function Footer() {
             <li key={link.label}>
               <a
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors hover:text-foreground"
               >
                 {link.label}
