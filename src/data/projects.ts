@@ -37,39 +37,6 @@ export const projects = [
     featured: true,
   },
   {
-    slug: "cybersecurity",
-    name: "Web Application Security Demo",
-    tagline:
-      "The same full-stack app built twice — intentionally vulnerable, then hardened.",
-    description:
-      "A cookie-session login and notes CRUD app implemented as two variants: one with realistic, intentional web vulnerabilities and one hardened with industry-standard practices. Every flaw is documented as flaw to exploit to fix to principle, with runnable exploit requests and an in-app attack console that fires real requests at the API.",
-    technologies: [
-      { name: "React", icon: "react" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "Vite", icon: "vite" },
-      { name: "Drizzle ORM", icon: "drizzle" },
-      { name: "PostgreSQL", icon: "postgresql" },
-      { name: "Zod", icon: "zod" },
-    ],
-    demoUrl: "https://cybersecurity-fixed.vercel.app",
-    repoUrl: "https://github.com/dagike/cybersecurity",
-    screenshot: "/projects/cybersecurity/cover.png",
-    features: [
-      "One cookie-session login and notes CRUD app built twice: an intentionally vulnerable variant and a hardened one with the same features.",
-      "Six vulnerability classes mapped to the OWASP Top 10 — SQL injection, broken authentication, IDOR, stored XSS, missing CSRF protection and verbose errors.",
-      "Per-flaw write-ups taking each issue from exploit to fix to underlying principle, backed by runnable exploit requests.",
-      "In-app attack console that fires real requests at the vulnerable API.",
-      "Vulnerable app runs only behind a shared-password gate, holds fake seeded data, carries an insecure-demo banner and re-seeds on a schedule.",
-      "Both deployments rate-limited at the edge; databases and secrets fully isolated between the two apps.",
-    ],
-    details: [
-      "One small app — cookie-session login plus notes CRUD — built twice. apps/vulnerable carries realistic, intentional web vulnerabilities; apps/fixed has the same features hardened with standard practices. The write-ups take each flaw from exploit through fix to the underlying principle, backed by runnable exploit requests.",
-      "The vulnerable app is a deliberately insecure teaching demo. It holds only fake, seeded data; the unsafe behaviour is off by default and runs only behind a shared-password gate; its database and secrets are fully isolated from everything else; every page carries an insecure-demo banner; both deployments are rate-limited at the edge; and the vulnerable database is re-seeded on a schedule.",
-      "The hardened app is the live demo. The gated vulnerable deployment lives at cybersecurity-vulnerable.vercel.app.",
-    ],
-    featured: true,
-  },
-  {
     slug: "traveling-world-map",
     name: "Traveling World Map",
     tagline:
@@ -100,7 +67,7 @@ export const projects = [
       "Admin mode adds a country with a been-here or want-to-go status and an optional year, and the login password can be changed from within the app.",
       "The project is an npm workspaces monorepo: a shared package of TypeScript types, a Fastify plus Drizzle plus Postgres REST API, a React map client, and a Vercel function entrypoint that runs the server as a single serverless function.",
     ],
-    featured: false,
+    featured: true,
   },
   {
     slug: "game-library",
@@ -131,6 +98,39 @@ export const projects = [
       "The public library page is a grid of quick-view cards — cover, title, star rating — with real-time search, filters and sorting. Each game has a detail page with full metadata, a personal rating and ranking, private notes, and a public comment thread anyone can post to.",
       "Games are imported from the RAWG API rather than typed in by hand: the admin flow searches RAWG and pulls the selected title into the local database. Browsing and commenting are open to everyone; adding, editing and deleting are restricted to a single seeded owner account.",
       "Built on the Next.js App Router with Tailwind and Drizzle over a Neon Postgres database, deployed on Vercel.",
+    ],
+    featured: false,
+  },
+  {
+    slug: "cybersecurity",
+    name: "Web Application Security Demo",
+    tagline:
+      "The same full-stack app built twice — intentionally vulnerable, then hardened.",
+    description:
+      "A cookie-session login and notes CRUD app implemented as two variants: one with realistic, intentional web vulnerabilities and one hardened with industry-standard practices. Every flaw is documented as flaw to exploit to fix to principle, with runnable exploit requests and an in-app attack console that fires real requests at the API.",
+    technologies: [
+      { name: "React", icon: "react" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Vite", icon: "vite" },
+      { name: "Drizzle ORM", icon: "drizzle" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "Zod", icon: "zod" },
+    ],
+    demoUrl: "https://cybersecurity-fixed.vercel.app",
+    repoUrl: "https://github.com/dagike/cybersecurity",
+    screenshot: "/projects/cybersecurity/cover.png",
+    features: [
+      "One cookie-session login and notes CRUD app built twice: an intentionally vulnerable variant and a hardened one with the same features.",
+      "Six vulnerability classes mapped to the OWASP Top 10 — SQL injection, broken authentication, IDOR, stored XSS, missing CSRF protection and verbose errors.",
+      "Per-flaw write-ups taking each issue from exploit to fix to underlying principle, backed by runnable exploit requests.",
+      "In-app attack console that fires real requests at the vulnerable API.",
+      "Vulnerable app runs only behind a shared-password gate, holds fake seeded data, carries an insecure-demo banner and re-seeds on a schedule.",
+      "Both deployments rate-limited at the edge; databases and secrets fully isolated between the two apps.",
+    ],
+    details: [
+      "One small app — cookie-session login plus notes CRUD — built twice. apps/vulnerable carries realistic, intentional web vulnerabilities; apps/fixed has the same features hardened with standard practices. The write-ups take each flaw from exploit through fix to the underlying principle, backed by runnable exploit requests.",
+      "The vulnerable app is a deliberately insecure teaching demo. It holds only fake, seeded data; the unsafe behaviour is off by default and runs only behind a shared-password gate; its database and secrets are fully isolated from everything else; every page carries an insecure-demo banner; both deployments are rate-limited at the edge; and the vulnerable database is re-seeded on a schedule.",
+      "The hardened app is the live demo. The gated vulnerable deployment lives at cybersecurity-vulnerable.vercel.app.",
     ],
     featured: false,
   },
