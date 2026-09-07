@@ -22,4 +22,13 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deployment
 
-Deployed on [Vercel](https://vercel.com).
+Deployed on [Vercel](https://vercel.com). Every push to `master` triggers a
+production deployment; pull requests get preview deployments.
+
+To deploy manually:
+
+```bash
+npx vercel --prod
+```
+
+Node version is pinned via `.nvmrc`; build settings live in `vercel.json`.
