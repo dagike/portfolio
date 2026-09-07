@@ -175,3 +175,68 @@ body {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
+
+/* -------------------------------------------------------------------------- */
+/*  Timeline reveal                                                           */
+/* -------------------------------------------------------------------------- */
+
+/*
+ * The start state is scoped to [data-motion="on"], which the TimelineReveal
+ * wrapper only sets after mount and only when motion is allowed. With no JS,
+ * failed JS, or reduced motion, entries render fully visible and the rail
+ * renders fully filled — the same content, static.
+ */
+[data-motion="on"] [data-timeline-entry] {
+  border-color: transparent;
+}
+
+[data-motion="on"] [data-timeline-entry] [data-timeline-dot] {
+  background: var(--border);
+}
+
+[data-motion="on"] [data-timeline-entry] [data-timeline-body] {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}
+
+[data-motion="on"] [data-timeline-entry][data-revealed="true"],
+[data-motion="on"] [data-timeline-entry]:focus-within {
+  border-color: var(--accent);
+}
+
+[data-motion="on"] [data-timeline-entry][data-revealed="true"] [data-timeline-dot],
+[data-motion="on"] [data-timeline-entry]:focus-within [data-timeline-dot] {
+  background: var(--accent);
+}
+
+[data-motion="on"] [data-timeline-entry][data-revealed="true"] [data-timeline-body],
+[data-motion="on"] [data-timeline-entry]:focus-within [data-timeline-body],
+[data-motion="on"] [data-timeline-entry] [data-timeline-body]:focus-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Reduced motion — site-wide                                                */
+/* -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Belt-and-braces: force the timeline's resting state regardless of the
+     wrapper's data-motion attribute. */
+  [data-timeline-entry] [data-timeline-body] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

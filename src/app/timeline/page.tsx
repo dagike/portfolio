@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/container";
+import { TimelineReveal } from "@/components/timeline-reveal";
 import { timeline } from "@/data/timeline";
 import { formatTimelineRange } from "@/lib/timeline";
 
@@ -26,49 +27,51 @@ export default function TimelinePage() {
         to them.
       </p>
 
-      <ol className="mt-2xl max-w-[42rem]">
-        {timeline.map((entry) => {
-          const headingId = `entry-${entry.id}`;
-          return (
-            <li
-              key={entry.id}
-              data-timeline-entry
-              className="relative border-l border-border pb-xl pl-lg last:border-transparent last:pb-0"
-            >
-              <span
-                aria-hidden
-                data-timeline-dot
-                className="absolute left-0 top-[6px] h-[10px] w-[10px] -translate-x-1/2 rounded-full border-2 border-background bg-border"
-              />
-              <article
-                data-timeline-body
-                tabIndex={0}
-                aria-labelledby={headingId}
-                className="rounded-md"
+      <TimelineReveal>
+        <ol className="mt-2xl max-w-[42rem]">
+          {timeline.map((entry) => {
+            const headingId = `entry-${entry.id}`;
+            return (
+              <li
+                key={entry.id}
+                data-timeline-entry
+                className="relative border-l border-border pb-xl pl-lg last:border-transparent last:pb-0"
               >
-                <p className="text-sm font-medium text-accent">
-                  <time dateTime={entry.start}>
-                    {formatTimelineRange(entry.start, entry.end)}
-                  </time>
-                </p>
-                <h3
-                  id={headingId}
-                  className="mt-2xs text-lg font-semibold tracking-tight text-foreground"
+                <span
+                  aria-hidden
+                  data-timeline-dot
+                  className="absolute left-0 top-[6px] h-[10px] w-[10px] -translate-x-1/2 rounded-full border-2 border-background bg-border"
+                />
+                <article
+                  data-timeline-body
+                  tabIndex={0}
+                  aria-labelledby={headingId}
+                  className="rounded-md"
                 >
-                  {entry.title}
-                </h3>
-                <p className="mt-2xs text-sm text-muted">
-                  {entry.organization}
-                  {entry.location ? ` · ${entry.location}` : ""}
-                </p>
-                {entry.kind === "education" && (
-                  <p className="mt-2xs text-sm text-muted">{entry.credential}</p>
-                )}
-              </article>
-            </li>
-          );
-        })}
-      </ol>
+                  <p className="text-sm font-medium text-accent">
+                    <time dateTime={entry.start}>
+                      {formatTimelineRange(entry.start, entry.end)}
+                    </time>
+                  </p>
+                  <h3
+                    id={headingId}
+                    className="mt-2xs text-lg font-semibold tracking-tight text-foreground"
+                  >
+                    {entry.title}
+                  </h3>
+                  <p className="mt-2xs text-sm text-muted">
+                    {entry.organization}
+                    {entry.location ? ` · ${entry.location}` : ""}
+                  </p>
+                  {entry.kind === "education" && (
+                    <p className="mt-2xs text-sm text-muted">{entry.credential}</p>
+                  )}
+                </article>
+              </li>
+            );
+          })}
+        </ol>
+      </TimelineReveal>
     </Container>
   );
 }
