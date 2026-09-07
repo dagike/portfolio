@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { ProjectCard } from "@/components/project-card";
 import { about } from "@/data/about";
 import { home } from "@/data/home";
+import { projects } from "@/data/projects";
+
+const featured = projects.filter((project) => project.featured);
 
 export const metadata: Metadata = {
   title: {
@@ -80,6 +84,42 @@ export default function Home() {
           </li>
         ))}
       </ul>
+
+      <section className="mt-4xl">
+        <div className="flex items-baseline justify-between gap-md">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+            {home.work.heading}
+          </h2>
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2xs text-sm font-medium text-muted transition-colors hover:text-foreground"
+          >
+            {home.work.allLabel}
+            <span aria-hidden>&rarr;</span>
+          </Link>
+        </div>
+
+        <ul className="mt-lg grid grid-cols-1 gap-lg sm:grid-cols-2">
+          {featured.map((project) => (
+            <li key={project.slug} className="h-full">
+              <ProjectCard project={project} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="mt-3xl border-t border-border pt-xl">
+        <p className="max-w-[36rem] text-lg text-muted">
+          {home.closing.text}{" "}
+          <Link
+            href={home.closing.ctaHref}
+            className="font-medium text-accent underline underline-offset-2"
+          >
+            {home.closing.ctaLabel}
+          </Link>
+          .
+        </p>
+      </div>
     </Container>
   );
 }
