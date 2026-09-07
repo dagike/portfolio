@@ -70,6 +70,7 @@
   --accent-hover: var(--green-700);
   --accent-foreground: #ffffff;
   --ring: var(--green-600);
+  --danger: #b91c1c;
 }
 
 /* Dark — follows system unless an explicit light choice is set */
@@ -85,6 +86,7 @@
     --accent-hover: var(--green-400);
     --accent-foreground: #052e16;
     --ring: var(--green-500);
+    --danger: #f87171;
   }
 }
 
@@ -100,6 +102,7 @@
   --accent-hover: var(--green-400);
   --accent-foreground: #052e16;
   --ring: var(--green-500);
+  --danger: #f87171;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -117,6 +120,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
   --color-ring: var(--ring);
+  --color-danger: var(--danger);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
