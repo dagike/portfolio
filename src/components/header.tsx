@@ -6,7 +6,7 @@ import { Container } from "@/components/container";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
-  { href: "#", label: "Work" },
+  { href: "/projects", label: "Work" },
   { href: "#", label: "About" },
   { href: "#", label: "Contact" },
 ];
