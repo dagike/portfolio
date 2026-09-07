@@ -53,12 +53,12 @@ export default function TimelinePage() {
                       {formatTimelineRange(entry.start, entry.end)}
                     </time>
                   </p>
-                  <h3
+                  <h2
                     id={headingId}
                     className="mt-2xs text-lg font-semibold tracking-tight text-foreground"
                   >
                     {entry.title}
-                  </h3>
+                  </h2>
                   <p className="mt-2xs text-sm text-muted">
                     {entry.organization}
                     {entry.location ? ` · ${entry.location}` : ""}
