@@ -79,95 +79,97 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <Container as="article" className="max-w-3xl py-3xl">
-      <Link
-        href="/projects"
-        className="inline-flex items-center gap-2xs text-sm font-medium text-muted transition-colors hover:text-foreground"
-      >
-        <span aria-hidden>&larr;</span> All projects
-      </Link>
+    <Container className="py-3xl">
+      <article className="mx-auto max-w-[48rem]">
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-2xs text-sm font-medium text-muted transition-colors hover:text-foreground"
+        >
+          <span aria-hidden>&larr;</span> All projects
+        </Link>
 
-      <h1 className="mt-lg text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-        {project.name}
-      </h1>
-      <p className="mt-sm text-lg text-muted">{project.tagline}</p>
+        <h1 className="mt-lg text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          {project.name}
+        </h1>
+        <p className="mt-sm text-lg text-muted">{project.tagline}</p>
 
-      <h2 className="mt-xl text-xs font-medium uppercase tracking-[0.15em] text-muted">
-        Tech stack
-      </h2>
-      <ul className="mt-sm flex flex-wrap gap-2xs">
-        {project.technologies.map((tech) => (
-          <li
-            key={tech.icon}
-            className="inline-flex items-center gap-2xs rounded-sm border border-border px-xs py-3xs text-sm text-muted"
-          >
-            <TechIcon icon={tech.icon} name={tech.name} />
-            {tech.name}
-          </li>
-        ))}
-      </ul>
+        <h2 className="mt-xl text-xs font-medium uppercase tracking-[0.15em] text-muted">
+          Tech stack
+        </h2>
+        <ul className="mt-sm flex flex-wrap gap-2xs">
+          {project.technologies.map((tech) => (
+            <li
+              key={tech.icon}
+              className="inline-flex items-center gap-2xs rounded-sm border border-border px-xs py-3xs text-sm text-muted"
+            >
+              <TechIcon icon={tech.icon} name={tech.name} />
+              {tech.name}
+            </li>
+          ))}
+        </ul>
 
-      <div className="mt-lg flex flex-wrap items-center gap-md">
-        {project.demoUrl && (
+        <div className="mt-lg flex flex-wrap items-center gap-md">
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2xs rounded-md bg-accent px-md py-2xs text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+            >
+              Live demo
+              <ExternalArrow />
+            </a>
+          )}
           <a
-            href={project.demoUrl}
+            href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2xs rounded-md bg-accent px-md py-2xs text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+            className="inline-flex items-center gap-2xs rounded-md border border-border px-md py-2xs text-sm font-medium text-foreground transition-colors hover:bg-surface-muted"
           >
-            Live demo
+            <TechIcon icon="github" name="GitHub" />
+            View source
             <ExternalArrow />
           </a>
-        )}
-        <a
-          href={project.repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2xs rounded-md border border-border px-md py-2xs text-sm font-medium text-foreground transition-colors hover:bg-surface-muted"
-        >
-          <TechIcon icon="github" name="GitHub" />
-          View source
-          <ExternalArrow />
-        </a>
-      </div>
+        </div>
 
-      <div className="relative mt-xl aspect-[16/10] overflow-hidden rounded-lg border border-border bg-surface-muted">
-        <Image
-          src={project.screenshot}
-          alt={`Screenshot of ${project.name}`}
-          fill
-          priority
-          className="object-contain"
-          sizes="(min-width: 768px) 48rem, 100vw"
-        />
-      </div>
+        <div className="relative mt-xl aspect-[16/10] overflow-hidden rounded-lg border border-border bg-surface-muted">
+          <Image
+            src={project.screenshot}
+            alt={`Screenshot of ${project.name}`}
+            fill
+            priority
+            className="object-contain"
+            sizes="(min-width: 768px) 48rem, 100vw"
+          />
+        </div>
 
-      <p className="mt-xl text-lg text-foreground">{project.description}</p>
+        <p className="mt-xl text-lg text-foreground">{project.description}</p>
 
-      <h2 className="mt-2xl text-2xl font-semibold tracking-tight text-foreground">
-        Features
-      </h2>
-      <ul className="mt-md flex flex-col gap-sm">
-        {project.features.map((feature) => (
-          <li key={feature} className="flex gap-sm text-muted">
-            <span aria-hidden className="mt-2xs text-accent">
-              &#8226;
-            </span>
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+        <h2 className="mt-2xl text-2xl font-semibold tracking-tight text-foreground">
+          Features
+        </h2>
+        <ul className="mt-md flex flex-col gap-sm">
+          {project.features.map((feature) => (
+            <li key={feature} className="flex gap-sm text-muted">
+              <span aria-hidden className="mt-2xs text-accent">
+                &#8226;
+              </span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
 
-      <h2 className="mt-2xl text-2xl font-semibold tracking-tight text-foreground">
-        About this project
-      </h2>
-      <div className="mt-md flex flex-col gap-md">
-        {project.details.map((paragraph) => (
-          <p key={paragraph} className="text-muted">
-            {paragraph}
-          </p>
-        ))}
-      </div>
+        <h2 className="mt-2xl text-2xl font-semibold tracking-tight text-foreground">
+          About this project
+        </h2>
+        <div className="mt-md flex flex-col gap-md">
+          {project.details.map((paragraph) => (
+            <p key={paragraph} className="text-muted">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </article>
     </Container>
   );
 }

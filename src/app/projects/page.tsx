@@ -21,10 +21,10 @@ export default function ProjectsPage() {
       <p className="text-sm font-medium uppercase tracking-[0.15em] text-accent">
         Projects
       </p>
-      <h1 className="mt-sm max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+      <h1 className="mt-sm max-w-[42rem] text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
         Things I&rsquo;ve built.
       </h1>
-      <p className="mt-md max-w-xl text-lg text-muted">
+      <p className="mt-md max-w-[36rem] text-lg text-muted">
         Full-stack projects, each with a live demo and source on GitHub.
       </p>
 

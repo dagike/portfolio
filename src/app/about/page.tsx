@@ -36,12 +36,12 @@ export default function AboutPage() {
       <p className="text-sm font-medium uppercase tracking-[0.15em] text-accent">
         {about.eyebrow}
       </p>
-      <h1 className="mt-sm max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+      <h1 className="mt-sm max-w-[42rem] text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
         {about.heading}
       </h1>
-      <p className="mt-md max-w-xl text-lg text-muted">{about.lede}</p>
+      <p className="mt-md max-w-[36rem] text-lg text-muted">{about.lede}</p>
 
-      <div className="mt-2xl max-w-2xl flex flex-col gap-md">
+      <div className="mt-2xl max-w-[42rem] flex flex-col gap-md">
         {about.paragraphs.map((paragraph) => (
           <p key={paragraph} className="text-base leading-relaxed text-foreground">
             {paragraph}
