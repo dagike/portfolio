@@ -15,11 +15,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://isaacrosa.dev"),
   title: {
     default: "Portfolio",
     template: "%s · Portfolio",
   },
   description: "Personal portfolio.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const themeScript = `

@@ -2,6 +2,8 @@
 
 Personal portfolio built with [Next.js 15](https://nextjs.org) (App Router), TypeScript and [Tailwind CSS v4](https://tailwindcss.com).
 
+Live: [isaacrosa.dev](https://isaacrosa.dev)
+
 ## Development
 
 ```bash
