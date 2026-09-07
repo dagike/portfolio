@@ -5,7 +5,7 @@ export const home = {
   headline: "Frontend and analytics engineer and tech lead at TELUS.",
   lede: "I build customer-facing web and mobile experiences — and the measurement systems behind them. Based in Toronto.",
   ctas: [
-    { href: "/projects", label: "View work" },
+    { href: "/projects", label: "View projects" },
     { href: "/contact", label: "Get in touch" },
   ],
   capabilities: [
