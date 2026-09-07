@@ -14,7 +14,7 @@ export const home = {
     "Real-time personalization",
   ],
   work: {
-    heading: "Selected work",
+    heading: "Featured projects",
     allLabel: "See all projects",
   },
   closing: {
