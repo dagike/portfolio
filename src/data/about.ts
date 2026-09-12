@@ -40,6 +40,10 @@ export const about = {
       items: ["Node.js", "REST APIs", "SQL", "PostgreSQL", "BigQuery", "Python", "GCP"],
     },
     {
+      label: "Native & desktop",
+      items: ["C++", "Qt", "CMake"],
+    },
+    {
       label: "Testing & quality",
       items: [
         "Vitest",
