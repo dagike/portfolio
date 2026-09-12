@@ -70,6 +70,67 @@ export const projects = [
     featured: true,
   },
   {
+    slug: "hungryeditor",
+    name: "hungryeditor",
+    tagline:
+      "A fast, native Markdown editor with live preview — no Electron, no IDE weight.",
+    description:
+      "A native C++20 and Qt 6 Markdown editor built for the editing feel of a real text editor with the live preview of a dedicated Markdown app. Fenced code blocks get real syntax highlighting from the actual language grammar, the preview pane syncs scroll position and renders mermaid diagrams and KaTeX math fully offline, and the whole app cold-starts in under a quarter second on Linux or Windows.",
+    technologies: [
+      { name: "C++", icon: "cplusplus" },
+      { name: "Qt", icon: "qt" },
+      { name: "CMake", icon: "cmake" },
+    ],
+    demoUrl: null,
+    repoUrl: "https://github.com/dagike/hungryeditor",
+    screenshot: "/projects/hungryeditor/cover.png",
+    demos: [
+      {
+        src: "/projects/hungryeditor/demo/live-preview.mp4",
+        poster: "/projects/hungryeditor/demo/live-preview.jpg",
+        title: "Live preview",
+        description:
+          "Typing Markdown with mermaid diagrams and KaTeX math rendering live, side by side with synced scrolling.",
+      },
+      {
+        src: "/projects/hungryeditor/demo/command-palette.mp4",
+        poster: "/projects/hungryeditor/demo/command-palette.jpg",
+        title: "Command palette",
+        description:
+          "Fuzzy-searching and running commands from the command palette.",
+      },
+      {
+        src: "/projects/hungryeditor/demo/multi-cursor.mp4",
+        poster: "/projects/hungryeditor/demo/multi-cursor.jpg",
+        title: "Multi-cursor",
+        description:
+          "Multi-cursor editing with select-next-occurrence for fast, repeated changes.",
+      },
+      {
+        src: "/projects/hungryeditor/demo/themes.mp4",
+        poster: "/projects/hungryeditor/demo/themes.jpg",
+        title: "Themes",
+        description: "Cycling through the four built-in themes.",
+      },
+    ],
+    features: [
+      "Fenced code blocks highlighted with the actual language grammar, not generic monospace.",
+      "Side-by-side live preview with synced scrolling, offline mermaid diagrams and KaTeX math.",
+      "Multi-cursor editing, select-next-occurrence, rectangular column selection and regex find/replace.",
+      "Fuzzy command palette and go-to-anything file and buffer search.",
+      "GFM tables with tab navigation and auto-alignment, task lists, footnotes and an outline panel.",
+      "Standalone HTML export with inlined assets, PDF export, and four built-in themes plus custom JSON themes.",
+      "Cold start under a quarter second; native Linux and Windows packages, no Electron.",
+    ],
+    details: [
+      "hungryeditor is a native Markdown editor for people who live in the terminal but still want a real editor for prose — the editing feel of a proper code editor, the live preview of a dedicated Markdown app, and none of the browser weight of an Electron shell.",
+      "Editing features cover multi-cursor and select-next-occurrence, rectangular column selection, regex find/replace and find-in-files, a fuzzy command palette, go-to-anything search, and line move/duplicate/delete/join. Markdown authoring adds heading cycling, GFM tables with tab navigation, task lists with clickable checkboxes that write back to the source, footnotes, autolinks and an outline panel that tracks the caret.",
+      "The live preview keeps bidirectional synced scrolling, themed syntax highlighting in fenced code blocks, and bundled mermaid diagrams and KaTeX math that render fully offline behind a strict content-security policy. A filtered file-tree sidebar, session restore and crash-safe autosave round out the workspace, alongside standalone HTML and PDF export and four built-in themes.",
+      "Built with C++20 and Qt 6, packaged as .deb and .rpm on Linux and an .msi or portable .zip on Windows.",
+    ],
+    featured: true,
+  },
+  {
     slug: "game-library",
     name: "Game Library",
     tagline:
