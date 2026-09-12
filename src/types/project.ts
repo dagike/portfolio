@@ -6,6 +6,18 @@ export type Technology = {
   icon: string;
 };
 
+/** A recorded clip of a project running, shown in place of a static screenshot. */
+export type ProjectDemo = {
+  /** Public path to the MP4, e.g. "/projects/<slug>/demo/themes.mp4". */
+  src: string;
+  /** Public path to the poster frame shown before playback starts. */
+  poster: string;
+  /** Tab label, e.g. "Live preview". */
+  title: string;
+  /** One line describing what the clip shows. */
+  description: string;
+};
+
 /** A portfolio project. */
 export type Project = {
   /** URL segment; matches the GitHub repo name. */
@@ -22,6 +34,8 @@ export type Project = {
   repoUrl: string;
   /** Public path to the cover screenshot, e.g. "/projects/<slug>/cover.png". */
   screenshot: string;
+  /** Recorded clips shown instead of the screenshot on the detail page, when set. */
+  demos?: readonly ProjectDemo[];
   /** Bulleted feature list, one entry per bullet. */
   features: readonly string[];
   /** Longer body copy, one entry per paragraph. */

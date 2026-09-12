@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
+import { ProjectDemos } from "@/components/project-demos";
 import { TechIcon } from "@/components/tech-icon";
 import { getProjectBySlug, projects } from "@/data/projects";
 
@@ -132,16 +133,20 @@ export default async function ProjectPage({ params }: PageProps) {
           </a>
         </div>
 
-        <div className="relative mt-xl aspect-[16/10] overflow-hidden rounded-lg border border-border bg-surface-muted">
-          <Image
-            src={project.screenshot}
-            alt={`Screenshot of ${project.name}`}
-            fill
-            priority
-            className="object-contain"
-            sizes="(min-width: 768px) 48rem, 100vw"
-          />
-        </div>
+        {project.demos ? (
+          <ProjectDemos demos={project.demos} projectName={project.name} />
+        ) : (
+          <div className="relative mt-xl aspect-[16/10] overflow-hidden rounded-lg border border-border bg-surface-muted">
+            <Image
+              src={project.screenshot}
+              alt={`Screenshot of ${project.name}`}
+              fill
+              priority
+              className="object-contain"
+              sizes="(min-width: 768px) 48rem, 100vw"
+            />
+          </div>
+        )}
 
         <p className="mt-xl text-lg text-foreground">{project.description}</p>
 

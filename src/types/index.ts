@@ -5,7 +5,7 @@ export type {
   HomeCta,
   HomeWork,
 } from "./home";
-export type { Project, Technology } from "./project";
+export type { Project, ProjectDemo, Technology } from "./project";
 export type {
   EducationEntry,
   TimelineEntry,
