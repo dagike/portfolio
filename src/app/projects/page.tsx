@@ -25,7 +25,8 @@ export default function ProjectsPage() {
         Things I&rsquo;ve built.
       </h1>
       <p className="mt-md max-w-[36rem] text-lg text-muted">
-        Full-stack projects, each with a live demo and source on GitHub.
+        Web and native projects, each with source on GitHub and a live demo
+        or a recorded walkthrough.
       </p>
 
       <h2 className="sr-only">All projects</h2>
