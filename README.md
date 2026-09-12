@@ -41,7 +41,7 @@ Live: [isaacrosa.dev](https://isaacrosa.dev)
 
 | Route | Rendering | Shows |
 | --- | --- | --- |
-| `/` | Static | Hero, capability chips, featured projects |
+| `/` | Static | Hero, capability chips, toolbox icon strip, featured projects |
 | `/projects` | Static | Every project, featured first |
 | `/projects/[slug]` | Static (prerendered per project) | Tech stack, demo or screenshot, features, write-up |
 | `/about` | Static | Bio and a grouped skills toolbox |
@@ -106,7 +106,9 @@ Add an entry to `src/data/projects.ts` matching the `Project` type
   the static screenshot instead of stacking both.
 - `technologies` — each needs a `name` and a simple-icons `icon` slug. **Add
   the slug to `src/lib/tech-icons.ts` first** — an icon not found there
-  silently falls back to a plain circle rather than erroring.
+  silently falls back to a plain circle rather than erroring. `tech-icons.ts`
+  also carries two hand-drawn glyphs (`adobeexperienceplatform`,
+  `adobeanalytics`) since Adobe withdrew its marks from simple-icons in v14.
 - `featured` — controls whether it appears in the home page's grid.
 
 ### Adding a timeline entry

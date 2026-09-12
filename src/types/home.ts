@@ -1,3 +1,5 @@
+import type { Technology } from "./project";
+
 /** A call-to-action link in the home hero. */
 export type HomeCta = {
   /** Internal path, e.g. "/projects". */
@@ -36,6 +38,8 @@ export type HomeContent = {
   ctas: readonly HomeCta[];
   /** Short capability phrases shown as a chip strip. */
   capabilities: readonly string[];
+  /** Tools shown as an icon strip under the capability chips. */
+  toolbox: readonly Technology[];
   /** The selected-work section. */
   work: HomeWork;
   /** The closing contact nudge. */

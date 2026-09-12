@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
+import { TechIcon } from "@/components/tech-icon";
 import { about } from "@/data/about";
 import { home } from "@/data/home";
 import { projects } from "@/data/projects";
@@ -81,6 +82,21 @@ export default function Home() {
             className="inline-flex items-center rounded-sm border border-border px-2xs py-3xs text-sm text-muted"
           >
             {capability}
+          </li>
+        ))}
+      </ul>
+
+      <h2 className="mt-xl text-xs font-medium uppercase tracking-[0.15em] text-muted">
+        Toolbox
+      </h2>
+      <ul className="mt-sm flex flex-wrap gap-2xs">
+        {home.toolbox.map((tool) => (
+          <li
+            key={tool.name}
+            className="inline-flex items-center gap-2xs rounded-sm border border-border px-2xs py-3xs text-sm text-muted"
+          >
+            <TechIcon icon={tool.icon} name={tool.name} />
+            {tool.name}
           </li>
         ))}
       </ul>
