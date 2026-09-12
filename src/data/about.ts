@@ -15,38 +15,53 @@ export const about = {
     {
       label: "Frontend",
       items: [
-        "React",
-        "React Native",
-        "TypeScript",
-        "JavaScript",
-        "Redux",
-        "Next.js",
-        "Tailwind CSS",
+        { name: "React", icon: "react" },
+        // React Native has no separate simple-icons mark; reuses the React glyph.
+        { name: "React Native", icon: "react" },
+        { name: "TypeScript", icon: "typescript" },
+        { name: "JavaScript", icon: "javascript" },
+        { name: "Redux", icon: "redux" },
+        { name: "Next.js", icon: "nextdotjs" },
+        { name: "Tailwind CSS", icon: "tailwindcss" },
       ],
     },
     {
       label: "Personalization & analytics",
       items: [
-        "Adobe Experience Platform",
+        { name: "Adobe Experience Platform", icon: "adobeexperienceplatform" },
+        // No brand mark exists for these Adobe product/feature names; left
+        // as text chips rather than inventing more Adobe-family glyphs.
         "Real-Time Customer Profile",
         "Adobe Journey Optimizer",
-        "Adobe Analytics",
+        { name: "Adobe Analytics", icon: "adobeanalytics" },
         "Customer Journey Analytics",
         "Adobe Launch",
       ],
     },
     {
       label: "Backend & data",
-      items: ["Node.js", "REST APIs", "SQL", "PostgreSQL", "BigQuery", "Python", "GCP"],
+      items: [
+        { name: "Node.js", icon: "nodedotjs" },
+        "REST APIs",
+        "SQL",
+        { name: "PostgreSQL", icon: "postgresql" },
+        { name: "BigQuery", icon: "googlebigquery" },
+        { name: "Python", icon: "python" },
+        { name: "GCP", icon: "googlecloud" },
+      ],
     },
     {
       label: "Native & desktop",
-      items: ["C++", "Qt", "CMake"],
+      items: [
+        { name: "C++", icon: "cplusplus" },
+        { name: "Qt", icon: "qt" },
+        { name: "CMake", icon: "cmake" },
+      ],
     },
     {
       label: "Testing & quality",
       items: [
-        "Vitest",
+        { name: "Vitest", icon: "vitest" },
         "Automated functional tests",
         "QA automation",
         "A/B testing",
@@ -54,7 +69,13 @@ export const about = {
     },
     {
       label: "Tooling",
-      items: ["Git", "Vercel", "Vite", "Tableau", "Power BI"],
+      items: [
+        { name: "Git", icon: "git" },
+        { name: "Vercel", icon: "vercel" },
+        { name: "Vite", icon: "vite" },
+        { name: "Tableau", icon: "tableau" },
+        { name: "Power BI", icon: "powerbi" },
+      ],
     },
   ],
   resume: {

@@ -1,9 +1,15 @@
+import type { Technology } from "./project";
+
 /** A named group of tools or skills shown on the about page. */
 export type ToolboxGroup = {
   /** Group heading, e.g. "Frontend". */
   label: string;
-  /** Individual tools or skills in the group. */
-  items: readonly string[];
+  /**
+   * Individual tools or skills in the group. A plain string renders as a
+   * text-only chip (for concepts with no brand mark, e.g. "REST APIs");
+   * a `Technology` renders with its icon.
+   */
+  items: readonly (string | Technology)[];
 };
 
 /** The downloadable resume. */

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/container";
+import { TechIcon } from "@/components/tech-icon";
 import { about } from "@/data/about";
 
 export const metadata: Metadata = {
@@ -71,14 +72,20 @@ export default function AboutPage() {
               {group.label}
             </h3>
             <ul className="mt-sm flex flex-wrap gap-2xs">
-              {group.items.map((item) => (
-                <li
-                  key={item}
-                  className="inline-flex items-center rounded-sm border border-border px-2xs py-3xs text-sm text-muted"
-                >
-                  {item}
-                </li>
-              ))}
+              {group.items.map((item) => {
+                const name = typeof item === "string" ? item : item.name;
+                return (
+                  <li
+                    key={name}
+                    className="inline-flex items-center gap-2xs rounded-sm border border-border px-2xs py-3xs text-sm text-muted"
+                  >
+                    {typeof item !== "string" && (
+                      <TechIcon icon={item.icon} name={item.name} />
+                    )}
+                    {name}
+                  </li>
+                );
+              })}
             </ul>
           </li>
         ))}
