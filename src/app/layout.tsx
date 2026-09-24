@@ -15,15 +15,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteDescription =
+  "Isaac De La Rosa — frontend and analytics engineer and tech lead at TELUS, building customer-facing web and mobile experiences. Based in Toronto, open to relocating to Dublin.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://isaacrosa.dev"),
   title: {
-    default: "Portfolio",
-    template: "%s · Portfolio",
+    default: "Isaac De La Rosa",
+    template: "%s · Isaac De La Rosa",
   },
-  description: "Personal portfolio.",
+  description: siteDescription,
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Isaac De La Rosa",
+    title: "Isaac De La Rosa",
+    description: siteDescription,
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Isaac De La Rosa",
+    description: siteDescription,
   },
 };
 

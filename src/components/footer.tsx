@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border">
       <Container className="flex flex-col gap-sm py-lg text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-        <p>© {year} Portfolio</p>
+        <p>© {year} Isaac De La Rosa</p>
         <ul className="flex gap-lg">
           {links.map((link) => (
             <li key={link.label}>
