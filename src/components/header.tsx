@@ -42,7 +42,7 @@ export function Header() {
           className="font-mono text-lg font-semibold tracking-tight text-foreground"
           onClick={() => setOpen(false)}
         >
-          <span className="text-accent">/</span>rosa
+          <span className="text-accent">/</span>isaacrosa
         </Link>
 
         <div className="flex items-center gap-xs">

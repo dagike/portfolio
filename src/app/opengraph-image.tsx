@@ -21,7 +21,7 @@ export default function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 32, color: "#22c55e" }}>/rosa</div>
+        <div style={{ display: "flex", fontSize: 32, color: "#22c55e" }}>/isaacrosa</div>
         <div
           style={{
             display: "flex",
