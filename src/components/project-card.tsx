@@ -23,6 +23,9 @@ function ExternalArrow() {
   );
 }
 
+/** How many technology chips show a visible name before collapsing into "+N". */
+const VISIBLE_TECH_COUNT = 3;
+
 export function ProjectCard({
   project,
   priority = false,
@@ -31,6 +34,9 @@ export function ProjectCard({
   /** Set on the first card above the fold so its image is not lazy-loaded. */
   priority?: boolean;
 }) {
+  const visibleTech = project.technologies.slice(0, VISIBLE_TECH_COUNT);
+  const hiddenTech = project.technologies.slice(VISIBLE_TECH_COUNT);
+
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:border-muted focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background">
       <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-surface-muted">
@@ -51,16 +57,27 @@ export function ProjectCard({
         <p className="text-sm text-muted">{project.tagline}</p>
 
         <ul aria-label="Technologies" className="mt-2xs flex flex-wrap gap-2xs">
-          {project.technologies.map((tech) => (
+          {visibleTech.map((tech) => (
             <li
               key={tech.icon}
-              title={tech.name}
-              className="inline-flex items-center gap-2xs rounded-sm border border-border px-2xs py-3xs text-muted"
+              className="inline-flex items-center gap-2xs rounded-sm border border-border px-2xs py-3xs text-sm text-muted"
             >
               <TechIcon icon={tech.icon} name={tech.name} />
-              <span className="sr-only">{tech.name}</span>
+              {tech.name}
             </li>
           ))}
+          {hiddenTech.length > 0 && (
+            <li
+              title={hiddenTech.map((tech) => tech.name).join(", ")}
+              className="inline-flex items-center rounded-sm border border-border px-2xs py-3xs text-sm text-muted"
+            >
+              +{hiddenTech.length}
+              <span className="sr-only">
+                {" "}
+                more: {hiddenTech.map((tech) => tech.name).join(", ")}
+              </span>
+            </li>
+          )}
         </ul>
 
         <div className="mt-auto flex items-center gap-sm pt-sm">
