@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "@/components/container";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -15,6 +16,7 @@ const navLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const panelId = useId();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!open) return;
@@ -40,22 +42,30 @@ export function Header() {
           className="font-mono text-lg font-semibold tracking-tight text-foreground"
           onClick={() => setOpen(false)}
         >
-          <span className="text-accent">/</span>portfolio
+          <span className="text-accent">/</span>rosa
         </Link>
 
         <div className="flex items-center gap-xs">
           <nav aria-label="Primary" className="hidden md:block">
             <ul className="flex items-center gap-lg text-sm">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted transition-colors hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const active = pathname === link.href;
+                return (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      aria-current={active ? "page" : undefined}
+                      className={
+                        active
+                          ? "font-medium text-foreground"
+                          : "text-muted transition-colors hover:text-foreground"
+                      }
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
@@ -97,17 +107,25 @@ export function Header() {
         <Container>
           <nav aria-label="Mobile" className="py-sm">
             <ul className="flex flex-col">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="block py-sm text-base text-muted transition-colors hover:text-foreground"
-                    onClick={() => setOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const active = pathname === link.href;
+                return (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      aria-current={active ? "page" : undefined}
+                      className={
+                        active
+                          ? "block py-sm text-base font-medium text-foreground"
+                          : "block py-sm text-base text-muted transition-colors hover:text-foreground"
+                      }
+                      onClick={() => setOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </Container>
