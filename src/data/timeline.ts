@@ -9,8 +9,14 @@ export const timeline = [
     location: "Toronto, ON, Canada",
     start: "2022-09",
     end: null,
-    summary: null,
-    highlights: [],
+    summary:
+      "Tech lead for the analytics, personalization and data-layer architecture behind TELUS's enterprise web, mobile and Adobe Experience Platform stack. TELUS is one of Canada's largest telecommunications and technology companies.",
+    highlights: [
+      "Own the integration specs for a platform handling 300M+ server calls a month across 30+ business units, including commerce and retail.",
+      "Drive Adobe Experience Platform adoption and Real-Time Customer Profile activation so product, offer and service experiences adapt to real customer behaviour.",
+      "Co-led an internal npm package that turned implementation standards into enforced code instead of documentation.",
+      "Build reporting in Adobe Analytics, Customer Journey Analytics and BigQuery.",
+    ],
   },
   {
     kind: "work",
@@ -20,7 +26,8 @@ export const timeline = [
     location: "Toronto, ON, Canada",
     start: "2022-01",
     end: "2022-09",
-    summary: null,
+    summary:
+      "Built analytics instrumentation for TELUS Mobility's customer-facing properties, the step between the My TELUS junior role and the tech lead role that followed.",
     highlights: [],
   },
   {
@@ -31,8 +38,12 @@ export const timeline = [
     location: "Toronto, ON, Canada",
     start: "2019-10",
     end: "2022-01",
-    summary: null,
-    highlights: [],
+    summary:
+      "Joined as a junior analytics developer on My TELUS, then led the analytics and tracking side of TELUS's move to consolidate its native iOS and Android apps into a single React Native codebase.",
+    highlights: [
+      "Rebuilt the instrumentation, event schemas and data layer so measurement held up through the React Native rewrite.",
+      "That codebase now serves more than two million active app users.",
+    ],
   },
   {
     kind: "education",
@@ -43,7 +54,8 @@ export const timeline = [
     start: "2017",
     end: "2019",
     credential: "Post Graduate Certificate with Honours",
-    summary: null,
+    summary:
+      "Post-graduate program in Toronto, completed after moving from Mexico. Humber is one of the largest polytechnics in Ontario, Canada.",
     highlights: [],
   },
   {
@@ -55,7 +67,8 @@ export const timeline = [
     start: "2011",
     end: "2015",
     credential: "Bachelor's Degree",
-    summary: null,
+    summary:
+      "Undergraduate engineering degree in Mexico City. La Salle University is a private university in Mexico.",
     highlights: [],
   },
 ] as const satisfies readonly TimelineEntry[];

@@ -66,6 +66,23 @@ export default function TimelinePage() {
                   {entry.kind === "education" && (
                     <p className="mt-2xs text-sm text-muted">{entry.credential}</p>
                   )}
+                  {entry.summary && (
+                    <p className="mt-sm text-base text-foreground">
+                      {entry.summary}
+                    </p>
+                  )}
+                  {entry.highlights.length > 0 && (
+                    <ul className="mt-sm flex flex-col gap-2xs">
+                      {entry.highlights.map((highlight) => (
+                        <li key={highlight} className="flex gap-sm text-sm text-muted">
+                          <span aria-hidden className="mt-2xs text-accent">
+                            &#8226;
+                          </span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </article>
               </li>
             );
