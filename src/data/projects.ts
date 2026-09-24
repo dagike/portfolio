@@ -193,7 +193,7 @@ export const projects = [
       "The vulnerable app is a deliberately insecure teaching demo. It holds only fake, seeded data; the unsafe behaviour is off by default and runs only behind a shared-password gate; its database and secrets are fully isolated from everything else; every page carries an insecure-demo banner; both deployments are rate-limited at the edge; and the vulnerable database is re-seeded on a schedule.",
       "The hardened app is the live demo. The gated vulnerable deployment lives at cybersecurity-vulnerable.vercel.app.",
     ],
-    featured: false,
+    featured: true,
   },
 ] as const satisfies readonly Project[];
 
