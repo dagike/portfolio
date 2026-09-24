@@ -3,7 +3,7 @@ import type { AboutContent } from "@/types";
 export const about = {
   eyebrow: "About",
   heading: "The experiences, and the systems that measure them.",
-  lede: "Frontend and analytics engineer and tech lead at TELUS in Toronto — six-plus years on customer-facing web and mobile.",
+  lede: "Frontend and analytics engineer and tech lead at TELUS in Toronto — six-plus years on customer-facing web and mobile. Open to relocating to Dublin, with work-permit eligibility already in place.",
   paragraphs: [
     "I'm a frontend and analytics engineer and the tech lead for TELUS's enterprise web, mobile, and personalization stack, working across all of the company's digital properties. I joined in 2019 as a junior analytics developer on My TELUS and Mobility, and moved into the lead role in 2022.",
     "When TELUS consolidated its native iOS and Android apps into a single React Native codebase — now serving more than two million active app users — I led the analytics and tracking side of the migration: rebuilding the instrumentation, event schemas, and data layer so measurement held up through the rewrite. I still own those integration specs today, for a platform handling 300M+ server calls a month across 30+ business units, including commerce and retail.",

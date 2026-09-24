@@ -23,6 +23,10 @@ export default function ContactPage() {
         Questions about a project, work, or just want to say hello? Fill in the
         form and I&rsquo;ll get back to you.
       </p>
+      <p className="mt-sm max-w-[36rem] text-sm text-muted">
+        Open to relocating to Dublin, with work-permit eligibility already in
+        place.
+      </p>
 
       <div className="mt-2xl max-w-[36rem]">
         <ContactForm />
